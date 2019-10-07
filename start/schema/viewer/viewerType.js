@@ -1,11 +1,11 @@
-const {
+import {
   globalIdField
-} = use('graphql-relay');
+}  from 'graphql-relay';
 
-const {
+import {
   GraphQLObjectType,
   GraphQLString
-} = use('graphql');
+} from 'graphql';
 
 
 let viewerType = new GraphQLObjectType({

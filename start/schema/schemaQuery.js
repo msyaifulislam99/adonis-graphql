@@ -1,5 +1,7 @@
-const { GraphQLObjectType, GraphQLString }  = use('graphql');
-const { viewerType } = use("./viewer/viewerType");
+'use strict'
+
+import { GraphQLObjectType, GraphQLString } from 'graphql';
+import { viewerType } from "./viewer/viewerType";
 
 const query = new GraphQLObjectType({
   name: 'Query',

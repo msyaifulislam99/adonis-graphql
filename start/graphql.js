@@ -1,13 +1,24 @@
-const config = use('config');
+import config  from 'config';
 const appConfig = config.get('app');
 
-const { graphqlAdonis, graphiqlAdonis } = use('apollo-server-adonis');
-const { schema } = use('./schema');
+import { graphqlAdonis, graphiqlAdonis } from 'apollo-server-adonis';
+// const { ApolloServer } = use('apollo-server');
+import { schema } from './schema';
 
 class GraphQLServer {
+  // static create2() {
+  //   return new ApolloServer({
+  //     schema
+  //   })
+  // }
   static create() {
     return new graphqlAdonis({
       schema,
+      // context: ({req,auth ,res}) => {
+      //   console.log('req', req);
+      //   console.log('auth', auth);
+      //   console.log('res', res);
+      // }
       // context: ({ req, res }) => {
       //   // if(connection ) {
       //   //     return connection.context;

@@ -1,5 +1,7 @@
-const { GraphQLSchema } = use('graphql');
-const query = use('./schema/schemaQuery');
+'use strict'
+
+import { GraphQLSchema } from 'graphql';
+import query from './schema/schemaQuery';
 // import query from './schemaQuery';
 // import mutation from './schemaMutation';
 // import { subscription } from './schemaSubscription';
