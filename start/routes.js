@@ -13,9 +13,28 @@
 |
 */
 
+
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
+const Graphql = use('./graphql');
+
+const graphqlServer = Graphql.create();
+
+const corsOptions = {
+  origin: true,
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+
 
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
+
+
+// GRAPHQL SERVER
+Route.route('/graphql', graphqlServer, ['GET', 'POST']);
+
+
+// PLAYGROUND
+Route.route('/graphiql', Graphql.graphiqlAdonis('/graphql'), ['GET','POST']);
